@@ -1,8 +1,9 @@
 {
-  "name": "eosjs-ecc",
-  "version": "4.0.6",
+  "name": "daojs-ecc",
+  "version": "0.1.1",
   "description": "Elliptic curve cryptography functions",
   "keywords": [
+    "DAO",
     "ECC",
     "Private Key",
     "Public Key",
@@ -24,17 +25,17 @@
     "coveralls": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "yarn build_lib && yarn build_browser",
     "build_lib": "rm -f lib/* && babel src --out-dir lib",
-    "build_browser": "mkdir -p lib && browserify -o lib/eosjs-ecc.js -s eosjs_ecc lib/index.js",
+    "build_browser": "mkdir -p lib && browserify -o lib/daojs-ecc.js -s daojs_ecc lib/index.js",
     "build_browser_test": "yarn build && browserify -o dist/test.js lib/*.test.js",
     "documentation": "node_modules/documentation/bin/documentation.js",
-    "minimize": "terser lib/eosjs-ecc.js -o lib/eosjs-ecc.min.js --source-map --compress --mangle",
+    "minimize": "terser lib/daojs-ecc.js -o lib/daojs-ecc.min.js --source-map --compress --mangle",
     "docs": "yarn documentation -- readme src/api_common.js --section \"Common API\" --shallow",
-    "srisum": "npx srisum lib/eosjs-ecc.*",
+    "srisum": "npx srisum lib/daojs-ecc.*",
     "prepublishOnly": "yarn build && yarn minimize && yarn test_lib && yarn docs && yarn srisum"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/EOSIO/eosjs-ecc.git"
+    "url": "git://github.com/mixbytes/daojs-ecc.git"
   },
   "dependencies": {
     "@babel/runtime": "7.4.4",

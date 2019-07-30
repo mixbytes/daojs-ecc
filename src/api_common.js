@@ -71,7 +71,7 @@ ecc.randomKey().then(privateKey => {
 
         @example ecc.privateToPublic(wif) === pubkey
     */
-    privateToPublic: (wif, pubkey_prefix = 'EOS') =>
+    privateToPublic: (wif, pubkey_prefix = 'DAO') =>
       PrivateKey(wif).toPublic().toString(pubkey_prefix),
 
     /**
@@ -82,7 +82,7 @@ ecc.randomKey().then(privateKey => {
 
         @example ecc.isValidPublic(pubkey) === true
     */
-    isValidPublic: (pubkey, pubkey_prefix = 'EOS') =>
+    isValidPublic: (pubkey, pubkey_prefix = 'DAO') =>
       PublicKey.isValid(pubkey, pubkey_prefix),
 
     /**
